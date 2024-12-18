@@ -1,0 +1,690 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block Content %}
+
+<body class="index-page">
+
+  
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="{% static 'assets/img/hero-bg.jpg' %}" alt="" data-aos="fade-in">
+
+      <div class="container">
+
+        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-6 col-lg-8">
+            <h2><i>MD Nets:</i> Home of IT Solutions<span>.</span></h2>
+            <p>We are team of talented digital workers</p>
+          </div>
+        </div>
+
+        <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <i class="bi bi-binoculars"></i>
+              <h3><a href="">Code Debuging</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-box">
+              <i class="bi bi-bullseye"></i>
+              <h3><a href="">Transcription Services</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <i class="bi bi-fullscreen-exit"></i>
+              <h3><a href="">Graphic Design</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon-box">
+              <i class="bi bi-card-list"></i>
+              <h3><a href="">Web/App Design</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="700">
+            <div class="icon-box">
+              <i class="bi bi-gem"></i>
+              <h3><a href="">Cloud Hosting</a></h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 order-2 order-lg-1 content">
+            <h3>Innovative IT Solutions for Your Business Growth</h3>
+            <p class="fst-italic">
+              At Miton Digital Networks (MD Nets), we specialize in delivering cutting-edge IT solutions that drive efficiency, scalability, and security. Founded in May 2024, our mission is to empower businesses with technology that works seamlessly to fuel growth.
+            </p>
+            <ul>
+                <li><i class="bi bi-check2-all"></i> <span>Custom software development tailored to meet your business needs.</span></li>
+                <li><i class="bi bi-check2-all"></i> <span>Cloud services that enhance collaboration and reduce operational costs.</span></li>
+                <li><i class="bi bi-check2-all"></i> <span>Comprehensive cybersecurity solutions to protect your data and assets from threats.</span></li>
+            </ul>
+            <p>
+              Our team of experts works closely with you to understand your unique challenges and design technology strategies that help you stay ahead of the competition. Whether you're looking for innovative digital transformation or robust IT infrastructure, we deliver solutions that are efficient, scalable, and future-proof.
+            </p>
+        </div>
+        
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100"><img src="{% static 'assets/img/features-bg.jpg' %}" alt=""></div>
+          <div class="col-lg-6">
+
+            <div class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-code-slash flex-shrink-0"></i>
+                <div>
+                    <h4>Web Development</h4>
+                    <p>We create user-friendly, high-performance websites that are tailored to meet your business goals and deliver an outstanding online experience.</p>
+                </div>
+            </div><!-- End Features Item-->
+        
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-phone flex-shrink-0"></i>
+                <div>
+                    <h4>Mobile App Development</h4>
+                    <p>Our mobile app solutions are designed to enhance engagement, streamline workflows, and provide seamless experiences across all devices.</p>
+                </div>
+            </div><!-- End Features Item-->
+        
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-cloud-arrow-down flex-shrink-0"></i>
+                <div>
+                    <h4>Internet Connectivity</h4>
+                    <p>Reliable, high-speed internet solutions to keep your business connected, ensuring smooth operations and uninterrupted communication.</p>
+                </div>
+            </div><!-- End Features Item-->
+        
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-laptop flex-shrink-0"></i>
+              <div>
+                  <h4>IT Consultancy</h4>
+                  <p>Leverage our expert IT consultancy services to optimize your business processes, enhance your technology infrastructure, and drive innovation. We provide tailored solutions to meet your unique needs and help you stay ahead in the ever-evolving tech landscape.</p>
+              </div>
+          </div><!-- End Features Item-->
+        
+        </div>
+        
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Check our Services</p>
+      </div><!-- End Section Title -->          
+    <main class="main">
+
+      <!-- Page Title -->
+<div class="page-title" data-aos="fade">
+  <div class="heading">
+      <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+              <div class="col-lg-8">
+                  <h1>Service Details</h1>
+                  <p class="mb-0">Our innovative IT solutions help businesses scale, improve performance, and stay secure in an ever-evolving digital landscape. Explore our wide range of services designed to meet your unique needs.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <nav class="breadcrumbs">
+      <div class="container">
+          <ol>
+              <li><a href="index.html">Home</a></li>
+              <li class="current">Service Details</li>
+          </ol>
+      </div>
+  </nav>
+</div><!-- End Page Title -->
+
+<!-- Service Details Section -->
+<section id="service-details" class="service-details section">
+
+  <div class="container">
+
+      <div class="row gy-5">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+              <div class="service-box">
+                  <h4>Services List</h4>
+                  <div class="services-list">
+                      <a href="#" class="active"><i class="bi bi-arrow-right-circle"></i><span>Web Development</span></a>
+                      <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Mobile App Development</span></a>
+                      <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Cybersecurity</span></a>
+                      <a href="#"><i class="bi bi-arrow-right-circle"></i><span>IT Consulting</span></a>
+                      <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Cloud Solutions</span></a>
+                  </div>
+              </div><!-- End Services List -->
+
+              <div class="service-box">
+                  <h4>Download Catalog</h4>
+                  <div class="download-catalog">
+                      <a href="#"><i class="bi bi-filetype-pdf"></i><span>Catalog PDF</span></a>
+                      <a href="#"><i class="bi bi-file-earmark-word"></i><span>Catalog DOC</span></a>
+                  </div>
+              </div><!-- End Services List -->
+
+              <div class="help-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-headset help-icon"></i>
+                  <h4>Have a Question?</h4>
+                  <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>+254 027 84 039</span></p>
+                  <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a href="mailto:contact@yourcompany.com">contact@mdnets.com</a></p>
+              </div>
+
+          </div>
+
+          <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+              <img src="{% static 'assets/img/services.jpg' %}" alt="" class="img-fluid services-img">
+              <h3>Web Development: Building Your Digital Presence</h3>
+              <p>
+                  Our web development services focus on creating robust, responsive, and user-friendly websites. Whether you're looking for an e-commerce platform, a business website, or a custom web application, we deliver tailor-made solutions that align with your brand and business goals.
+              </p>
+              <ul>
+                  <li><i class="bi bi-check-circle"></i> <span>Custom web design and development to meet your business needs.</span></li>
+                  <li><i class="bi bi-check-circle"></i> <span>Responsive websites optimized for all devices and platforms.</span></li>
+                  <li><i class="bi bi-check-circle"></i> <span>SEO and performance optimization for higher visibility and speed.</span></li>
+              </ul>
+              <p>
+                  We leverage the latest technologies and frameworks to build websites that are not only visually appealing but also highly functional, secure, and scalable.
+              </p>
+
+              <h3>Mobile App Development: Engage Your Users Anywhere</h3>
+              <p>
+                  Our mobile app development team creates intuitive, feature-rich apps that are designed to run seamlessly across Android and iOS devices. Whether you need a business app, customer-facing solution, or a productivity tool, we bring your vision to life.
+              </p>
+              <ul>
+                  <li><i class="bi bi-check-circle"></i> <span>Native and hybrid mobile app solutions.</span></li>
+                  <li><i class="bi bi-check-circle"></i> <span>Custom app features tailored to your business processes.</span></li>
+                  <li><i class="bi bi-check-circle"></i> <span>App performance and UX/UI optimization for maximum engagement.</span></li>
+              </ul>
+              <p>
+                  Our apps are designed to deliver the best user experience, ensuring your customers and employees stay connected and productive on the go.
+              </p>
+
+              <h3>Cybersecurity: Safeguarding Your Digital Assets</h3>
+              <p>
+                  With increasing cyber threats, we provide comprehensive cybersecurity services to protect your business from data breaches, cyberattacks, and other vulnerabilities. From network security to end-point protection, we ensure your IT infrastructure is secure.
+              </p>
+              <ul>
+                  <li><i class="bi bi-check-circle"></i> <span>Risk assessments and vulnerability analysis.</span></li>
+                  <li><i class="bi bi-check-circle"></i> <span>Managed security services to monitor and prevent threats.</span></li>
+                  <li><i class="bi bi-check-circle"></i> <span>Data encryption, firewalls, and security patch management.</span></li>
+              </ul>
+              <p>
+                  Let us help you protect your sensitive data and ensure business continuity with state-of-the-art cybersecurity solutions.
+              </p>
+
+              <h3>IT Consulting: Transform Your Business with Technology</h3>
+              <p>
+                  Our IT consulting services guide businesses in selecting the right technologies, processes, and strategies for their growth. Whether you're planning a digital transformation or need ongoing support, we provide expert advice to improve your IT operations.
+              </p>
+              <ul>
+                  <li><i class="bi bi-check-circle"></i> <span>Technology strategy and roadmap planning.</span></li>
+                  <li><i class="bi bi-check-circle"></i> <span>Business process optimization through IT solutions.</span></li>
+                  <li><i class="bi bi-check-circle"></i> <span>Project management and execution support.</span></li>
+              </ul>
+              <p>
+                  Our experts work closely with your team to identify opportunities for innovation and help you navigate complex technology landscapes, ensuring the best outcomes for your business.
+              </p>
+
+          </div>
+
+      </div>
+
+  </div>
+
+</section><!-- /Service Details Section -->
+
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <img src="{% static 'assets/img/cta-bg.jpg' %}" alt="">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>Call To Action</h3>
+              <p>Join us today as a Shareholder, Web developer, Mobile App Developer, Transcriber or as a Member. Be part of MD Nets and belong to a family of vibrant community of like minded people today.</p>
+              <a class="cta-btn" href="#">Join Our Team</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Check our Portfolio</p>
+      </div><!-- End Section Title -->
+        <!-- Portfolio Details Section -->
+        
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+    
+            <div class="row gy-4">
+    
+              <div class="col-lg-8">
+                <div class="portfolio-details-slider swiper init-swiper">
+    
+                  <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "speed": 600,
+                      "autoplay": {
+                        "delay": 5000
+                      },
+                      "slidesPerView": "auto",
+                      "pagination": {
+                        "el": ".swiper-pagination",
+                        "type": "bullets",
+                        "clickable": true
+                      }
+                    }
+                  </script>
+    
+                  <div class="swiper-wrapper align-items-center">
+    
+                    <div class="swiper-slide">
+                      <img src="{% static 'assets/img/portfolio/app-1.jpg' %}" alt="">
+                    </div>
+    
+                    <div class="swiper-slide">
+                      <img src="{% static 'assets/img/portfolio/product-1.jpg' %}" alt="">
+                    </div>
+    
+                    <div class="swiper-slide">
+                      <img src="{% static 'assets/img/portfolio/branding-1.jpg' %}" alt="">
+                    </div>
+    
+                    <div class="swiper-slide">
+                      <img src="{% static 'assets/img/portfolio/books-1.jpg' %}" alt="">
+                    </div>
+    
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+    
+              <div class="col-lg-4">
+                <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Project Information</h3>
+                    <ul>
+                        <li><strong>Category</strong>: Web Development</li>
+                        <li><strong>Client</strong>: Tech Solutions Inc.</li>
+                        <li><strong>Project Date</strong>: 15 July, 2024</li>
+                        <li><strong>Project URL</strong>: <a href="#">www.techsolutions.com</a></li>
+                    </ul>
+                </div>
+                <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+                    <h2>Innovative Website for Tech Solutions Inc.</h2>
+                    <p>
+                        This project involved the creation of a responsive, high-performance website for Tech Solutions Inc., a leading provider of IT solutions. The website was designed to enhance user experience, increase engagement, and reflect the client’s innovative approach to technology. We integrated custom features like a client portal, real-time chat support, and a dynamic service showcase.
+                    </p>
+                    <p>
+                        The project included:
+                    </p>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span>Custom design to align with the client’s brand identity.</span></li>
+                        <li><i class="bi bi-check-circle"></i> <span>Optimized for mobile and desktop devices for seamless user experience.</span></li>
+                        <li><i class="bi bi-check-circle"></i> <span>SEO optimization for improved search engine rankings.</span></li>
+                        <li><i class="bi bi-check-circle"></i> <span>Integrated contact forms, service inquiry tools, and real-time chat functionality.</span></li>
+                    </ul>
+                    <p>
+                        This project is a great example of how we combine design, functionality, and technology to create a web solution that not only meets but exceeds client expectations. The website has significantly improved Tech Solutions' online visibility and has contributed to generating new business leads.
+                    </p>
+                </div>
+            </div>
+            
+              </div>
+    
+            </div>
+    
+          </div>
+    
+        </section><!-- /Portfolio Details Section -->
+        
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 align-items-center justify-content-between">
+
+          <div class="col-lg-5">
+            <img src="{% static 'assets/img/stats-img.jpg' %}" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-lg-6">
+
+            <h3 class="fw-bold fs-2 mb-3">Our Impact in the IT Industry</h3>
+            <p>
+              At MD Nets, we've been transforming businesses with cutting-edge technology solutions. With over a decade of experience, we’ve helped clients across various industries achieve their digital transformation goals.
+            </p>
+
+            <div class="row gy-4">
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-emoji-smile flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="184" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Happy Clients</strong> <span>Client satisfaction is our top priority, ensuring long-term relationships and trust.</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-journal-richtext flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="73" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Projects</strong> <span>From websites to mobile apps, we've successfully delivered over 50 projects</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-headset flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="824" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Hours Of Support</strong> <span>Providing ongoing support and maintenance to keep your business running smoothly.</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-people flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="16" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Hard Workers</strong> <span>Our team of 15+ dedicated professionals works tirelessly to deliver excellence.</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section dark-background">
+
+  <img src="{% static 'assets/img/testimonials-bg.jpg' %}" class="testimonials-bg" alt="">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": {
+            "delay": 5000
+          },
+          "slidesPerView": "auto",
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          }
+        }
+      </script>
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+            <h3>Milton Kiprop</h3>
+            <h4>Tech. &amp; Co-founder</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              <span>"Working with MD Nets has been a transformative experience for us. Their technical expertise and innovative approach helped us streamline our processes, resulting in significant growth. The team is highly professional, and their commitment to excellence is unmatched. I am proud to have MD Nets as a partner in our technological journey."</span>
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+          </div>
+        </div><!-- End testimonial item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+            <h3>Mercy Chepkorir</h3>
+            <h4>Digital Marketing Specialist</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              <span>"MD Nets helped us elevate our digital presence with a tailored marketing strategy. Their insights into data analytics and social media optimization have made a huge difference. They are more than just a service provider—they are a true business partner that we can trust for growth and success."</span>
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+          </div>
+        </div><!-- End testimonial item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
+            <h3>Eng. Godfrey Kirui</h3>
+            <h4>Lead Engineer</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              <span>"Our experience with MD Nets has been nothing short of excellent. From the very beginning, their team understood our technical requirements and provided solutions that were both efficient and cost-effective. Their commitment to quality and timely delivery has helped us achieve our engineering goals with confidence."</span>
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+          </div>
+        </div><!-- End testimonial item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
+            <h3>Victor Kiprotich</h3>
+            <h4>Chief Executive Officer</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              <span>"MD Nets is an outstanding IT partner. Their ability to understand the intricate details of our business needs and offer tailored technological solutions has been a key factor in our growth. We truly value their strategic input and look forward to continuing our successful collaboration."</span>
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+          </div>
+        </div><!-- End testimonial item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
+            <h3>Dominic Kirui</h3>
+            <h4>Lead Technician</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              <span>"MD Nets has been instrumental in helping us scale our software development efforts. Their deep technical knowledge, attention to detail, and continuous support have allowed us to implement complex systems seamlessly. Their team is responsive, reliable, and dedicated to ensuring success every step of the way."</span>
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+          </div>
+        </div><!-- End testimonial item -->
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+
+</section><!-- /Testimonials Section -->
+
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Team</h2>
+        <p>our Team</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Victor Kiprotich</h4>
+                <span>Chief Executive Officer</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'assets/img/team/team-2.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Mercy Chepkorir</h4>
+                <span>Product Manager</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'assets/img/team/team-3.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Eng. Godfrey Kirui</h4>
+                <span>Consultant & Lead Engineer</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'assets/img/team/team-4.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Dr. Brian Kibet</h4>
+                <span>Chair, Roronya Foundation</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+    
+  </main>
+
+  
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
+{% endblock %}
