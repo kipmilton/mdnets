@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Real Transcription Task{% endblock %}
+
+{% block Content %}
+
+<!-- Real Transcription Task Section -->
+<section id="real-transcription-task" class="transcription section">
+
+    <!-- Section Title -->
+    <p><br><br></p>
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Transcription Task</h2>
+        <p>Complete the transcription task below within the given time limit.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Timer -->
+        <div class="timer text-center" data-aos="fade-up" data-aos-delay="200">
+            <h3>Time Remaining: <span id="timer">00:30:00</span></h3>
+        </div><!-- End Timer -->
+
+        <!-- Audio Player with Speed Controls -->
+        <div class="audio-player" data-aos="fade-up" data-aos-delay="300">
+            <audio id="audio" controls>
+                <source src="{{ audio_url }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="audio-controls mt-2">
+                <button type="button" class="btn btn-secondary" id="decrease-speed">- Speed</button>
+                <button type="button" class="btn btn-secondary" id="increase-speed">+ Speed</button>
+            </div>
+        </div><!-- End Audio Player with Speed Controls -->
+
+        <!-- Transcription Input -->
+        <div class="transcription-input mt-4" data-aos="fade-up" data-aos-delay="400">
+            <form action="/submit-task" method="post" class="php-transcription-form">
+                <div class="form-group">
+                    <textarea class="form-control" name="transcription" rows="10" placeholder="Type the transcription here..." required></textarea>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Submit Transcription</button>
+                </div>
+            </form>
+        </div><!-- End Transcription Input -->
+
+    </div>
+
+</section><!-- /Real Transcription Task Section -->
+
+<script>
+    // Timer functionality
+    let timerElement = document.getElementById('timer');
+    let totalTime = 30 * 60; // 30 minutes in seconds
+
+    function updateTimer() {
+        let minutes = Math.floor(totalTime / 60);
+        let seconds = totalTime % 60;
+        timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        if (totalTime > 0) {
+            totalTime--;
+        } else {
+            alert('Time is up!');
+            document.querySelector('form').submit();
+        }
+    }
+    setInterval(updateTimer, 1000);
+
+    // Audio speed controls
+    const audio = document.getElementById('audio');
+    document.getElementById('increase-speed').addEventListener('click', () => {
+        audio.playbackRate = Math.min(audio.playbackRate + 0.1, 2.0); // Max speed 2x
+    });
+    document.getElementById('decrease-speed').addEventListener('click', () => {
+        audio.playbackRate = Math.max(audio.playbackRate - 0.1, 0.5); // Min speed 0.5x
+    });
+</script>
+
+{% endblock %}

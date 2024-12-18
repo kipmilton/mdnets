@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Transcription Test{% endblock %}
+
+{% block Content %}
+
+<!-- Transcription Test Section -->
+<section id="transcription-test" class="transcription section">
+
+    <!-- Section Title -->
+    <p><br><br></p>
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Transcription Test</h2>
+        <p>Listen to the audio and type what you hear in the box below.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Audio Player -->
+        <div class="audio-player" data-aos="fade-up" data-aos-delay="200">
+            <audio controls>
+                <source src="{{ audio_url }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div><!-- End Audio Player -->
+
+        <!-- Transcription Input -->
+        <div class="transcription-input" data-aos="fade-up" data-aos-delay="300">
+            <form action="/submit-transcription" method="post" class="php-transcription-form">
+                <div class="form-group">
+                    <textarea class="form-control" name="transcription" rows="10" placeholder="Type the transcription here..." required></textarea>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Submit Transcription</button>
+                </div>
+            </form>
+        </div><!-- End Transcription Input -->
+
+    </div>
+
+</section><!-- /Transcription Test Section -->
+{% endblock %}

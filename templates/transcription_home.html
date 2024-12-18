@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Welcome to Transcription Services{% endblock %}
+
+{% block Content %}
+
+<!-- Home Section -->
+ <br><br><br>
+<section id="home" class="home section SlateBlue-background">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h1>Welcome to Our Transcription Platform</h1>
+        <p>Effortlessly transform your audio into accurate, high-quality text or join our team of skilled transcribers.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+
+            <!-- For Clients -->
+            <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card client-option">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Clients</h3>
+                        <p class="card-text">Are you looking for reliable transcription services? Upload your audio files and let our expert team deliver precise and timely transcripts tailored to your needs.</p>
+                        <a href="/clients/upload" class="btn btn-outline-info">Get Started</a>
+                    </div>
+                </div>
+            </div><!-- End For Clients -->
+
+            <!-- For Transcribers -->
+            <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card transcriber-option">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Transcribers</h3>
+                        <p class="card-text">Join our growing community of professional transcribers. Sign up or log in to access transcription tasks and showcase your skills.</p>
+                        <a href="{% url 'matiangi:transcriber_register'%}" class="btn btn-sm">Join Our Team</a><br>
+                        <a href="{% url 'matiangi:transcriber_login'%}" class="btn-outline-info">Sign in</a>
+                    </div>
+                </div>
+            </div><!-- End For Transcribers -->
+
+        </div>
+    </div>
+
+</section><!-- /Home Section -->
+
+{% endblock %}
