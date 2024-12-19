@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Register - MD Nets {% endblock %}
+{% block title %}Login - MD Nets {% endblock %}
 
 {% block Content %}
-<section class="register_page section dark-background">
+<section class="login_page section dark-background">
 
   <!-- Background Image -->
   <div class="background-image">
@@ -14,7 +14,7 @@
   <div class="container mt-5">
     <div class="card shadow-sm border-0">
       <div class="card-body">
-        <h2 class="text-center mb-4">Create Account - Transcriber</h2>
+        <h2 class="text-center mb-4">Graphic Designer Login</h2>
         {% if messages %}
           <div class="message-box">
             {% for message in messages %}
@@ -22,30 +22,31 @@
             {% endfor %}
           </div>
         {% endif %}
-        <form action="{% url 'matiangi:transcriber_register' %}" method="POST">
+        <form action="{% url 'matiangi:graphic_desighner_login' %}" method="POST">
           {% csrf_token %}
           <div class="form-group mb-3">
             <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Set your username" required>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
           </div>
 
           <div class="form-group mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password1" placeholder="Set your password" required>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
           </div>
 
-          <div class="form-group mb-3">
-            <label for="confirm_password" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" id="confirm_password" name="password2" placeholder="Re-enter your password" required>
+          <div class="form-group form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
+            <label class="form-check-label" for="rememberMe">Remember me</label>
           </div>
 
           <div class="d-grid">
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary">Login</button>
           </div>
         </form>
 
         <div class="text-center mt-3">
-            <p>Already have an account? <a href="{% url 'matiangi:graphic_designer_login' %}">Log in</a></p>
+          <button><a href="#">Forgot password?</a></button><br>
+          <a href="{% url 'matiangi:graphic_designer_register' %}">Create an account</a>
         </div>
       </div>
     </div>
@@ -53,4 +54,3 @@
 
 </section>
 {% endblock %}
-

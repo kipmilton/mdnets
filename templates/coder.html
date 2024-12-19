@@ -3,61 +3,37 @@
 {% block title %}Debugging and Freelancing Services{% endblock %}
 
 {% block Content %}
-
+<br><br>
 <!-- Debugging and Freelancer Section -->
-<section id="debug-freelancer" class="debug-freelancer section">
+<section id="debug-freelancer" class="debug-freelancer section bg-light py-5">
 
     <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-        <h1>Submit Your Code for Debugging or Join as a Freelancer</h1>
-        <p>We offer seamless debugging services for clients and exciting opportunities for freelancers to join our team.</p>
+    <div class="container section-title text-center mb-5" data-aos="fade-up">
+        <h1 class="display-4">Submit Your Code for Debugging or Join Our Freelancer Team</h1>
+        <p class="lead">We offer seamless debugging services for clients and exciting opportunities for freelancers to join our team. Choose your path below.</p>
     </div><!-- End Section Title -->
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row justify-content-center">
 
-            <!-- For Clients -->
-            <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="card client-option">
-                    <div class="card-body">
-                        <h3 class="card-title">Clients - Submit Code for Debugging</h3>
+            <!-- For Clients Section -->
+            <div class="col-md-5 mb-4 text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="card shadow-sm border-light rounded">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-primary mb-3">💻 Submit Code for Debugging</h3>
                         <p class="card-text">Upload your code as a file (PDF, ZIP, or TXT) or paste it directly into the text area below. Let our expert team help you debug efficiently.</p>
-                        <form action="/submit-debug" method="post" enctype="multipart/form-data">
-                            <div class="form-group mb-3">
-                                <label for="file-upload" class="form-label">Upload File</label>
-                                <input type="file" class="form-control" id="file-upload" name="code_file" accept=".pdf,.zip,.txt">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="code-paste" class="form-label">Or Paste Code Here</label>
-                                <textarea class="form-control" id="code-paste" name="code_text" rows="8" placeholder="Paste your code here..."></textarea>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Submit Code</button>
-                            </div>
-                        </form>
+                        <a href="{% url 'matiangi:client_submit_code' %}" class="btn btn-lg w-100 mt-3">Submit Code Now</a>
                     </div>
                 </div>
             </div><!-- End For Clients -->
 
-            <!-- For Freelancers -->
-            <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="card freelancer-option">
-                    <div class="card-body">
-                        <h3 class="card-title">Freelancers - Join Our Team</h3>
-                        <p class="card-text">Submit your resume and showcase your expertise. Join our team of skilled freelancers today.</p>
-                        <form action="/submit-resume" method="post" enctype="multipart/form-data">
-                            <div class="form-group mb-3">
-                                <label for="resume-upload" class="form-label">Upload Resume</label>
-                                <input type="file" class="form-control" id="resume-upload" name="resume_file" accept=".pdf,.doc,.docx">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="freelancer-message" class="form-label">Your Message</label>
-                                <textarea class="form-control" id="freelancer-message" name="message" rows="6" placeholder="Tell us about your skills and experience..."></textarea>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-secondary">Submit Resume</button>
-                            </div>
-                        </form>
+            <!-- For Freelancers Section -->
+            <div class="col-md-5 mb-4 text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="card shadow-sm border-light rounded">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-success mb-3">🚀 Join as a Freelancer</h3>
+                        <p class="card-text">Submit your resume and showcase your skills. Join our team of skilled freelancers and take on exciting projects.</p>
+                        <a href="{% url 'matiangi:freelancer_register' %}" class="btn btn-p btn-lg w-100 mt-3">Apply Now</a>
                     </div>
                 </div>
             </div><!-- End For Freelancers -->

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Submit Code for Debugging{% endblock %}
+
+{% block Content %}
+<section id="client-debugging" class="debugging-section section">
+
+    <div class="container section-title" data-aos="fade-up">
+        <h1>Submit Your Code for Debugging</h1>
+        <p>Upload your code as a file (PDF, ZIP, or TXT) or paste it directly into the text area below. Let our expert team help you debug efficiently.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+
+            <!-- Client Code Submission Form -->
+            <div class="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card client-option">
+                    <div class="card-body">
+                        <form action="/submit-debug" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group mb-3">
+                                <label for="file-upload" class="form-label">Upload Code File</label>
+                                <input type="file" class="form-control" id="file-upload" name="code_file" accept=".pdf,.zip,.txt">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="code-paste" class="form-label">Or Paste Code Here</label>
+                                <textarea class="form-control" id="code-paste" name="code_text" rows="8" placeholder="Paste your code here..."></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Submit Code</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div><!-- End Client Form -->
+
+        </div>
+    </div>
+
+</section><!-- /Debugging Section -->
+
+{% endblock %}

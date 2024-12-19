@@ -17,19 +17,13 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Login/Register</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#"><span>Register</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="{% url 'matiangi:login_page'%}">Login</a></li>
-              <li class="dropdown"><a href="#"><span>Forgot Password</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Reset password</a></li>
-                  <li><a href="#">Delete acount</a></li>
-                  <li><a href="{% url 'matiangi:contact'%}">Contact support</a></li>
-                </ul>
-              </li>
-              <li><a href="{% url 'matiangi:login_page'%}">Staff Login</a></li>
-              <li><a href="{% url 'matiangi:register'%}">Register</a></li>
-              <li><a href="{% url 'matiangi:home_page'%}">Continue as guest</a></li>
+              <li><a href="{% url 'matiangi:transcriber_register' %}">As Transcriber</a></li>
+              <li><a href="{% url 'matiangi:client_register' %}">As Client</a></li>
+              <li><a href="{% url 'matiangi:coder_register' %}">As Coder</a></li>
+              <li><a href="{% url 'matiangi:graphic_designer_register' %}">As Graphics Designer</a></li>
+              <li><a href="{% url 'matiangi:staff_register' %}">As Staff</a></li>
             </ul>
           </li>
           <li><a href="{% url 'matiangi:contact'%}">Contact</a></li>
@@ -37,7 +31,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="{% url 'matiangi:register'%}">Join Our Team</a>
+      <a class="btn-getstarted" href="{% url 'matiangi:client_register'%}">Partner With Us</a>
 
     </div>
   </header>

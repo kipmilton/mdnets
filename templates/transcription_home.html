@@ -23,7 +23,8 @@
                     <div class="card-body text-center">
                         <h3 class="card-title">Clients</h3>
                         <p class="card-text">Are you looking for reliable transcription services? Upload your audio files and let our expert team deliver precise and timely transcripts tailored to your needs.</p>
-                        <a href="/clients/upload" class="btn btn-outline-info">Get Started</a>
+                        <a href="{% url 'matiangi:client_register'%}" class="btn btn-outline-info">Get Started</a>
+                        <p>Already a Member? <a href="{% url 'matiangi:client_login'%}" class="btn btn-sm">Login</a></p>
                     </div>
                 </div>
             </div><!-- End For Clients -->

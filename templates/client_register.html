@@ -14,7 +14,7 @@
   <div class="container mt-5">
     <div class="card shadow-sm border-0">
       <div class="card-body">
-        <h2 class="text-center mb-4">Create Account - Transcriber</h2>
+        <h2 class="text-center mb-4">Create Account - Client</h2>
         {% if messages %}
           <div class="message-box">
             {% for message in messages %}
@@ -22,7 +22,7 @@
             {% endfor %}
           </div>
         {% endif %}
-        <form action="{% url 'matiangi:transcriber_register' %}" method="POST">
+        <form action="{% url 'matiangi:client_register' %}" method="POST">
           {% csrf_token %}
           <div class="form-group mb-3">
             <label for="username" class="form-label">Username</label>
@@ -53,4 +53,3 @@
 
 </section>
 {% endblock %}
-
