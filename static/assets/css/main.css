@@ -1,3 +1,95 @@
+/* General Page Styling */
+.graphic-design-request-page {
+  background: linear-gradient(135deg, #f0f4f8, #ffffff);  /* Soft gradient background */
+  padding: 60px 0;  /* Spacious padding for the section */
+}
+
+/* Card Styling */
+.card {
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);  /* Soft shadows for depth */
+}
+
+.card-body {
+  padding: 3rem;
+  color: #333;  /* Dark text for readability */
+}
+
+/* Typography Styling */
+h2 {
+  font-family: 'Montserrat', sans-serif; /* Modern font for headings */
+  font-weight: 700;
+  color: #007bff;
+  font-size: 2.5rem;
+}
+
+/* Form Control Styling */
+.form .form-control {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form .form-control:focus {
+  border-color: #007bff;  /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+/* Button Styling with Gradient */
+.btn-gradient {
+  background: linear-gradient(135deg, #007bff, #00aaff); /* Blue gradient */
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #0056b3, #0088cc);
+  transform: translateY(-2px);  /* Button hover effect */
+}
+
+.btn-gradient:active {
+  background: linear-gradient(135deg, #004085, #0077b3);
+  transform: translateY(1px);  /* Button click effect */
+}
+
+/* Links Styling */
+.text-center p a {
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.text-center p a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 2rem; /* Smaller font size for mobile */
+  }
+
+  .form .form-control {
+    padding: 0.8rem; /* Smaller form input padding on mobile */
+  }
+}
+
+
+
+
+
 /* register page */
 /* Shared Styling for Register and Login Pages */
 .register_page, .login_page {

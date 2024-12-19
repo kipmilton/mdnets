@@ -1,29 +1,42 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Graphic Design Request{% endblock %}
 
 {% block Content %}
-<br><br>
-<section class="graphic-design-request-section">
-    <div class="container">
-        <h2 class="text-center mb-4">Request a Graphic Design Service</h2>
+<section class="graphic-design-request-page section">
+
+  <!-- Main Section -->
+  <div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-lg">
+      <div class="card-body">
+        <h2 class="text-center mb-4 text-primary">Request a Graphic Design Service</h2>
 
         {% if messages %}
-            <div class="message-box">
-                {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-                {% endfor %}
-            </div>
+          <div class="message-box mb-4">
+            {% for message in messages %}
+              <p class="alert {{ message.tags }}">{{ message }}</p>
+            {% endfor %}
+          </div>
         {% endif %}
 
         <form method="POST" class="form">
-            {% csrf_token %}
-            {{ form.as_p }}
+          {% csrf_token %}
+          
+          <!-- Render form fields (assuming you pass a form object) -->
+          {{ form.as_p }}
 
-            <div class="d-grid mt-3">
-                <button type="submit" class="btn btn-primary">Submit Request</button>
-            </div>
+          <div class="d-grid mt-3">
+            <button type="submit" class="btn btn-lg btn-gradient">Submit Request</button>
+          </div>
         </form>
+
+        <div class="text-center mt-4">
+          <p>Have questions? <a href="{% url 'matiangi:contact' %}" class="text-decoration-underline text-dark">Contact us</a></p>
+        </div>
+      </div>
     </div>
+  </div>
+
 </section>
 {% endblock %}

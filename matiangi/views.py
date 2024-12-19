@@ -289,6 +289,7 @@ def client_submit_code(request):
     return render(request, 'client_submit_code.html')
 
 # View for freelancers to submit resume
+
 def freelancer_register(request):
     if request.method == 'POST':
         # Handle resume submission here
