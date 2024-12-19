@@ -35,8 +35,26 @@ def home_page(request):
 def login_page(request):
     return render(request, "login.html")
 
-# Register page view
+
+# Register View
 def register(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('transcription_home.html')  # Redirect to the transcription page
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'transcriber_register.html', {'form': form})
+
+
+# Register page view
+def transcriber_register(request):
     """Display the register page and handle registration"""
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
@@ -47,13 +65,13 @@ def register(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('transcription_home')  # Redirect to the transcription home page
+                return redirect('transcription_home.html')  # Redirect to the transcription home page
     else:
         form = CustomUserCreationForm()
     return render(request, 'transcriber_register.html', {'form': form})
 
 # Login view
-def login_view(request):
+def transcriber_login(request):
     """Handle user login"""
     if request.method == 'POST':
         form = CustomAuthenticationForm(data=request.POST)
@@ -63,7 +81,7 @@ def login_view(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('transcription_home')
+                return redirect('transcription_home.html')
     else:
         form = CustomAuthenticationForm()
     return render(request, 'transcriber_login.html', {'form': form})
@@ -103,10 +121,10 @@ def graphic_design_request(request):
             # Send an email to the admin (you can replace this with your own logic)
             subject = f"Graphic Design Request from {name}"
             message = f"Name: {name}\nEmail: {email}\nPhone: {phone_number}\nService Type: {service_type}\nDescription: {description}\nPreferred Contact Time: {preferred_contact_time}"
-            send_mail(subject, message, email, ['admin@example.com'], fail_silently=False)
+            send_mail(subject, message, email, ['kipmilton71@gmail.com'], fail_silently=False)
 
             messages.success(request, "Your graphic design request has been submitted successfully. We'll get back to you shortly.")
-            return redirect('thee_app:graphic_design_request')  # Redirect back to the form page after submission
+            return redirect('matiangi:graphic_design_request')  # Redirect back to the form page after submission
         else:
             messages.error(request, "Please correct the errors in the form.")
     else:
@@ -119,7 +137,8 @@ def transcription_home(request):
     return render(request, 'transcription_home.html')
 
 # Coder Debug view (handles uploaded code and pasted code)
-@csrf_exempt  # For simplicity; use CSRF protection in production
+@csrf_exempt
+@login_required  # For simplicity; use CSRF protection in production
 def coder_debug(request):
     if request.method == 'POST':
         code_file = request.FILES.get('code_file')
@@ -178,13 +197,6 @@ def handle_uploaded_file(f):
 
 
 
-# from pyexpat.errors import messages
-# from django.shortcuts import redirect, render
-# from django.contrib.auth import authenticate, login
-# from django.contrib.auth.models import User
-# from .forms import GraphicDesignRequestForm
-
-
 
 
 # # views.py
@@ -212,20 +224,20 @@ def handle_uploaded_file(f):
 #         form = CustomUserCreationForm()
 #     return render(request, 'transcriber_register.html', {'form': form})
 
-# # Login View
-# def login_view(request):
-#     if request.method == 'POST':
-#         form = CustomAuthenticationForm(data=request.POST)
-#         if form.is_valid():
-#             username = form.cleaned_data['username']
-#             password = form.cleaned_data['password']
-#             user = authenticate(request, username=username, password=password)
-#             if user is not None:
-#                 login(request, user)
-#                 return redirect('transcription_home')
-#     else:
-#         form = CustomAuthenticationForm()
-#     return render(request, 'transcriber_login.html', {'form': form})
+# Login View
+def login_view(request):
+    if request.method == 'POST':
+        form = CustomAuthenticationForm(data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('transcription_home')
+    else:
+        form = CustomAuthenticationForm()
+    return render(request, 'transcriber_login.html', {'form': form})
 
 # # Transcription Test View (Only available for registered users)
 # @login_required
@@ -286,8 +298,8 @@ def handle_uploaded_file(f):
 # from django.views.decorators.csrf import csrf_exempt
 
 
-# def transcription_home(request):
-#     return render(request, 'transcription_home.html')
+def transcription_home(request):
+    return render(request, 'transcription_home.html')
 
 # def transcription_test(request):
 #     return render(request, 'transcription_test.html')
@@ -315,20 +327,20 @@ def handle_uploaded_file(f):
 
 #     return render(request, 'coder.html')
 
-# @csrf_exempt  # For simplicity; use CSRF protection in production
-# def submit_resume(request):
-#     if request.method == 'POST':
-#         resume_file = request.FILES.get('resume_file')
-#         message = request.POST.get('message')
+@csrf_exempt  # For simplicity; use CSRF protection in production
+def submit_resume(request):
+    if request.method == 'POST':
+        resume_file = request.FILES.get('resume_file')
+        message = request.POST.get('message')
 
-#         if resume_file:
-#             # Handle resume upload
-#             handle_uploaded_file(resume_file)
-#             return HttpResponse("Resume uploaded successfully.")
+        if resume_file:
+            # Handle resume upload
+            handle_uploaded_file(resume_file)
+            return HttpResponse("Resume uploaded successfully.")
 
-#         return HttpResponse("No resume submitted.")
+        return HttpResponse("No resume submitted.")
 
-#     return redirect('transcription_home')
+    return redirect('transcription_home')
 
 # def handle_uploaded_file(f):
 #     with open(f'uploads/{f.name}', 'wb+') as destination:
@@ -336,42 +348,42 @@ def handle_uploaded_file(f):
 #             destination.write(chunk)
 
 
-# def login_page(request):
-#     """Login view"""
-#     if request.method == "POST":
-#         username = request.POST['username']
-#         password = request.POST['password']
-#         user = authenticate(request, username=username, password=password)
+def login_page(request):
+    """Login view"""
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
 
-#         if user is not None:
-#             login(request, user)
-#             messages.success(request, "You are now logged in!")
-#             return redirect('thee_app:home')  # Redirect to the homepage or dashboard
-#         else:
-#             messages.error(request, "Invalid login credentials.")
+        if user is not None:
+            login(request, user)
+            messages.success(request, "You are now logged in!")
+            return redirect('thee_app:home')  # Redirect to the homepage or dashboard
+        else:
+            messages.error(request, "Invalid login credentials.")
     
-#     return render(request, 'accounts/login.html')
+    return render(request, 'accounts/login.html')
 
 
 
 
-# def register(request):
-#     """Registration view"""
-#     if request.method == 'POST':
-#         username = request.POST['username']
-#         password = request.POST['password']
-#         confirm_password = request.POST['confirm_password']
+def register(request):
+    """Registration view"""
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        confirm_password = request.POST['confirm_password']
 
-#         if password == confirm_password:
-#             try:
-#                 user = User.objects.create_user(username=username, password=password)
-#                 user.save()
-#                 messages.success(request, "Account created successfully.")
-#                 return redirect('thee_app:login_page')  # Redirect to the login page after successful registration
-#             except Exception as e:
-#                 messages.error(request, f"Error: {str(e)}")
-#         else:
-#             messages.error(request, "Passwords do not match.")
+        if password == confirm_password:
+            try:
+                user = User.objects.create_user(username=username, password=password)
+                user.save()
+                messages.success(request, "Account created successfully.")
+                return redirect('thee_app:login_page')  # Redirect to the login page after successful registration
+            except Exception as e:
+                messages.error(request, f"Error: {str(e)}")
+        else:
+            messages.error(request, "Passwords do not match.")
     
-#     return render(request, 'accounts/register.html')
+    return render(request, 'accounts/register.html')
          
