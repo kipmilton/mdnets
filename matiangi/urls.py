@@ -16,6 +16,7 @@ urlpatterns = [
     path('transcription-task/', views.transcription_task, name='transcription_task'),  # Fixed view name
     path('coder/', views.coder_debug, name='coder_debug'),
     path('user-dashboard/', views.user_dashboard, name='user_dashboard'),
+    path('graphic_desighner_login/', views.graphic_desighner_login, name='graphic_desighner_login'),
     
     # Change 'submit-resume/' to a more appropriate URL for freelancer registration
     path('freelancer/register/', views.freelancer_register, name='freelancer_register'),

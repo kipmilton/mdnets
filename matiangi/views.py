@@ -20,6 +20,9 @@ def register(request):
     """Display the gallery page"""
     return render(request, "register.html")
 
+def graphic_desighner_login(request):
+    return render(request, 'graphic_desighner_login.html')
+
 def contact(request):
     """Display the contact page"""
     return render(request, 'contact.html')
@@ -379,7 +382,7 @@ def user_dashboard(request):
     return render(request, 'user_dashboard.html', {'tasks': tasks, 'total_earnings': total_earnings})
 
 
-
+@login_required
 def graphic_design_request(request):
     """Handle graphic design service request form"""
     if request.method == 'POST':
